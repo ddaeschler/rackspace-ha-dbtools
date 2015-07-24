@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#usage: list-db-flavors
+#usage: list-ha-servers
 
 import sys
 import pyrax
@@ -10,8 +10,8 @@ from common import init_pyrax
 def main(argv):
     init_pyrax()
 
-    for flav in pyrax.cloud_databases.list_flavors():
-        print flav
+    for ha in pyrax.cloud_databases.list_ha():
+        print ha
 
 if __name__ == "__main__":
     main(sys.argv[1:])
